@@ -16,14 +16,14 @@ ${string/%substring/replacement}|如果$string的后缀匹配$substring, 那么�
 ###字符串操作举例：
 >1 长度
 
->~~~
+>```sh
 >$ string=linuxeye 
 >$ echo {#string} 
 >8
->~~~
+>```
 >2 截取字串
 
->~~~
+>```sh
 >$ string=linuxeye
 >$ echo ${string:5} 
 >eye 
@@ -31,10 +31,10 @@ ${string/%substring/replacement}|如果$string的后缀匹配$substring, 那么�
 >linux 
 >$ echo ${string::5} 
 >linux
->~~~
+>```
 >3 字符串删除 
 
->~~~
+>```sh
 >$ redis_file=c:/windows/src/redis-2.8.4.tar.gz 
 >$ echo ${redis_file#/} 
 >c:/windows/src/redis-2.8.4.tar.gz 
@@ -46,7 +46,7 @@ ${string/%substring/replacement}|如果$string的后缀匹配$substring, 那么�
 >c:/windows/src 
 >$ echo ${redis_file%%/*} 
 >c:
->~~~
+>```
 > ${变量名#substring正则表达式}从字符串开头开始配备substring,删除匹配上的表达式。
 
 > ${变量名%substring正则表达式}从字符串结尾开始配备substring,删除匹配上的表达式。 
@@ -55,14 +55,14 @@ ${string/%substring/replacement}|如果$string的后缀匹配$substring, 那么�
 
 >4 字符串替换
 
->~~~
+>```sh
 >$ echo ${redis_file/\//\\} 
 >c:\windows/src/redis-2.8.4.tar.gz 
 >$ echo ${redis_file//\//\\} 
 >c:\windows\src\redis-2.8.4.tar.gz 
 >${变量/查找/替换值} 一个"/"表示替换第一个，"//"表示替换所有,
 当查找中出现了："/"请加转义符"\/"表示。
->~~~
+>```
 
 ##判断读取字符串值
 表达式      |含义
@@ -80,7 +80,7 @@ ${!varprefix*}|匹配之前所有以varprefix开头进行声明的变量
 ${!varprefix@}|匹配之前所有以varprefix开头进行声明的变量
 
 ###判断读取字符串值举例：
->~~~
+>```sh
 >$ output=${FILE:-UNSET} 
 >$ echo $output 
 >UNSET 
@@ -88,7 +88,7 @@ ${!varprefix@}|匹配之前所有以varprefix开头进行声明的变量
 >$ output=${FILE:-UNSET} 
 >$ echo $output 
 >/root/lnmp 
->~~~
+>```
 >对变量的路径进行操作时，最好先判断路径是否为非空,如下path变量没有定义，则取/tmp，防止变量没定义误删除： 
 
 >$ find ${path-/tmp} -name *.tar.gz -type f | xargs rm -f

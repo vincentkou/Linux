@@ -60,4 +60,3 @@ sh
 > * 在路径中取目录路径: ${path%/*} (与dirname相同功能)
 
 > * 取文件的扩展名: ${path##*.}
-dsfdasff
